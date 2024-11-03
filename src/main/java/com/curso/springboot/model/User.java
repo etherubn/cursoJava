@@ -24,6 +24,6 @@ public class User {
     private boolean enabled;
 
     @ManyToOne
-    @JoinColumn(name = "id_role")
-    private Rol rol;
+    @JoinColumn(name = "id_role",nullable = false)
+    private Role role;
 }

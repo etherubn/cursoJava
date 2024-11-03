@@ -12,14 +12,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CategoryDto {
-    private Long idCategory;
-    @NotBlank
-    @Size(min = 3,max = 20)
-    private String nameofCategory;
-    @NotBlank
-    @Size(min = 3,max = 20)
-    private String descriptionCategory;
+public class UserDto {
+    private Long idUser;
     @NotNull
-    private boolean enabledCategory;
+    private RoleDto role;
+
+    @NotBlank
+    @Size(min = 1,max = 30)
+    private String username;
+    @Size(min = 1,max = 60)
+    @NotBlank
+    private String password;
+    @NotNull
+    private boolean enabled;
 }

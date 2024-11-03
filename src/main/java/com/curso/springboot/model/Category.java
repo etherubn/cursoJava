@@ -27,4 +27,8 @@ public class Category {
     @Column(nullable = false)
     private boolean enabled;
 
+    public Category(String name, boolean enabled) {
+        this.name = name;
+        this.enabled = enabled;
+    }
 }

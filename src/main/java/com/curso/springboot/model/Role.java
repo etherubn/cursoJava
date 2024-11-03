@@ -11,11 +11,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Rol {
+public class Role {
 
     @Id
     @EqualsAndHashCode.Include
-    private Long idRol;
+    private Long idRole;
 
     @Column(nullable = false,length = 10)
     private String name;

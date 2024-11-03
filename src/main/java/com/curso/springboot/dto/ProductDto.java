@@ -1,9 +1,10 @@
 package com.curso.springboot.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,14 +13,20 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CategoryDto {
+public class ProductDto {
+
+    private Long idProduct;
+    @NotNull
+    @Min(value = 1)
     private Long idCategory;
     @NotBlank
-    @Size(min = 3,max = 20)
-    private String nameofCategory;
+    private String nameProduct;
     @NotBlank
-    @Size(min = 3,max = 20)
-    private String descriptionCategory;
+    private String descriptionProduct;
     @NotNull
-    private boolean enabledCategory;
+    @Positive
+    private double priceProduct;
+    @NotNull
+    private boolean enabledProduct;
+
 }

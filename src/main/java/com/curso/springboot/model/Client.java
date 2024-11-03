@@ -12,10 +12,11 @@ import lombok.NoArgsConstructor;
 @Entity
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Client {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private Long idclient;
+    private Long idClient;
 
     @Column(length = 25, name = "first_name",nullable = false)
     private String firstName;

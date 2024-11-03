@@ -26,8 +26,6 @@ public class Product {
     @Column(nullable = false,columnDefinition = "decimal(6,2)")
     private double price;
     @Column(nullable = false)
-    private Integer stock;
-    @Column(nullable = false)
     private boolean enabled;
 
     @JoinColumn(name = "id_category",nullable = false)

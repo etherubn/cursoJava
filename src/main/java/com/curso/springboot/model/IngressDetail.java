@@ -11,19 +11,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@IdClass(IngressDetailKey.class)
 public class IngressDetail {
 
-    @EmbeddedId
-    private IngressDetailKey idIngressDetail;
-
-    @ManyToOne
-    @JoinColumn(name = "id_product")
-    @MapsId("idProduct")
+    @Id
     private Product product;
 
-    @ManyToOne
-    @JoinColumn(name = "id_ingress")
-    @MapsId("idIngress")
+    @Id
     private Ingress ingress;
 
     private int quantity;
